@@ -1,0 +1,31 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=4374
+
+This is a slightly modified version of the pyflakes.vim script that enables
+using pyflakes even with Vim that has no Python support (in case you are, for
+any reason, stuck with such an installation of Vim). However, your system still
+has to have Python installed.
+
+For more information about pyflakes and the original pyflakes-vim, see
+http://www.vim.org/scripts/script.php?script_id=2441.
+
+
+DIFFERENCES FROM pyflakes-vim
+
+To work around the unability to call Python code (and thus pyflakes) directly
+from vim, pyflakes-vim-nopython spawns an external Python process, writes the
+current buffer content to its standard input and reads and parses its standard
+output to get the results.
+
+
+KNOWN ISSUES
+
+* Doesn't work in cygwin when native (Windows) Python is used.
+* On Windows, messages are usually not refreshed when changing buffer contents without entering/leaving Insert mode (via "r", "x", etc.)
+* In Windows gvim, each pyflakes check causes an annoying blink of the window title bar.
+* Running a separate Python process each time the source gets changed is not
+  very efficient and the time cost may be prohibitive on some machines.
+
+
+FINALLY
+
+If you find any bugs, please let me know at WWuzzy@gmail.com. Thanks!
