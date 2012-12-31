@@ -8,10 +8,8 @@
 " installation.
 "
 " Author: Hynek Urban <wwuzzy@gmail.com>
-" Version: 0.1
+" Version: 0.2
 
-
-let s:python_call = 'python pyflakes-wrapper.py' " Change this to suit your needs if necessary.
 
 if exists("b:did_pyflakes_plugin")
     finish " only load once
@@ -29,8 +27,8 @@ else
 endif
 let s:current_file=expand("<sfile>")
 let s:path=fnamemodify(s:current_file, ':p:h')
-let $PATH=$PATH . s:pathlist_separator . s:path
 let $PYTHONPATH=$PYTHONPATH . s:pathlist_separator . s:path . s:path_separator . 'pyflakes'
+let s:python_call = 'python ' . s:path . s:path_separator . 'pyflakes-wrapper.py' " Change this to suit your needs if necessary.
 
 if !exists('g:pyflakes_use_quickfix')
     let g:pyflakes_use_quickfix = 1

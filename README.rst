@@ -1,7 +1,7 @@
 pyflakes-vim-nopython
 =====================
 
-This is a slightly modified version of the python-vim project that enables
+This is a slightly modified version of the pyflakes-vim project that enables
 using pyflakes even with Vim that has no Python support (in case you are, for
 any reason, stuck with such an installation of Vim). However, your system still
 has to have Python installed.
@@ -30,19 +30,15 @@ Quick installation
 
 2. Download the latest version of pyflakes-vim-nopython.
 
-3. If you're using pathogen_, unzip the contents of ``pyflakes-vim-nopython.zip`` into
-   its own bundle directory, e.g. into ``~/.vim/bundle/pyflakes-vim-nopython/``.
-
-   Otherwise unzip ``pyflakes-nopython.vim`` into ``~/.vim/ftplugin/python``.
+3. Extract ``pyflakes-nopython.tar.gz`` into ``~/.vim/ftplugin/python``.
+   
+   If you're using pathogen_, unzip the contents of ``pyflakes-nopython.tar.gz`` into
+   its own bundle directory under ``ftplugin/python``, e.g. into
+   ``~/.vim/bundle/pyflakes-nopython/ftplugin/python``. 
 
 4. Make sure that pyflakes can be found by Python. This is by default done by
    enhancing the PYTHONPATH environment variable in the pyflakes-nopython.vim
    script, and on most systems that should be sufficient. 
-
-5. Make sure that pyflakes-wrapper.py is on system path so that "python
-   pyflakes-wrapper.py" can be called. By default , this is done by modifying
-   the PATH environment variable in the pyflakes-nopython.vim script, which
-   should be sufficient in most setups.
 
 Lastly, it is presumed that python can be called as "python" in the system shell.
 
